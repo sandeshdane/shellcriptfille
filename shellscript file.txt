@@ -1,0 +1,18 @@
+sudo apt-get update -y
+sudo apt-get install apache2 -y
+sudo service apache2 start
+sudo apt-get install mysql-server -y
+sudo service mysql start
+sudo apt-get install php -y
+sudo apt-get install php8.3-fpm -y
+sudo service php8.3-fpm start
+sudo service mysql restart
+sudo service php8.3-fpm restart
+cd /var/www/html
+sudo rm index.html
+sudo touch index.html
+sudo touch index.php
+echo "this is automated file" | sudo tee -a  index.html
+echo "<?php phpinfo(); ?>" | sudo tee -a index.php
+sudo touch aajcha.php
+echo "<?php echo 'aajcha php'; ?>" | sudo tee aajcha.php
